@@ -1,16 +1,19 @@
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = 'all'
 
-divmod(11, 3)
-a, b = divmod(11, 3)
-a
-b
+[x*x for x in range(1,11)]
+[x*x for x in range(1,11) if x%2==0]
+k=[m+n for m in 'ABC' for n in 'XYZ']
+print(k)
 
+L=['Hello','World','IBM','Apple']
+s=[s.lower() for s in L]
 
-divmod(3, 11)
-a, b = divmod(3, 11)
-a
-b
+print(s)
 
 
-print(a, b)
+# -*- coding:utf-8 -*-
+L1=['Hello','World','18','Apple',None]
+
+print(L1)
+L2=[s.lower() for s in L1 if isinstance(s,str)]
+
+print(L2)
