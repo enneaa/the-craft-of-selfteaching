@@ -1,19 +1,15 @@
+def sum_of_word(word):
+    sum = 0
+    for char in word:
+        sum += ord(char) - 96
+    return sum
 
-[x*x for x in range(1,11)]
-[x*x for x in range(1,11) if x%2==0]
-k=[m+n for m in 'ABC' for n in 'XYZ']
-print(k)
-
-L=['Hello','World','IBM','Apple']
-s=[s.lower() for s in L]
-
-print(s)
-
-
-# -*- coding:utf-8 -*-
-L1=['Hello','World','18','Apple',None]
-
-print(L1)
-L2=[s.lower() for s in L1 if isinstance(s,str)]
-
-print(L2)
+with open('results.txt', 'w') as result:
+    with open('./pytest/tsts.txt', 'r') as file:
+        for word in file.readlines():
+            if sum_of_word(word.strip()) == 100:
+                result.write(word)
+                print(word)
+                for c in word:
+                    print(c, ord(c)-96)
+                break
